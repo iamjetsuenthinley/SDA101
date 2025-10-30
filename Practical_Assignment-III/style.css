@@ -44,15 +44,29 @@ header nav a {
 
 /* Hero */
 .hero {
+  position: relative;
   text-align: center;
   padding: 100px 20px;
-  background: url('Images\controllo-di-temperatura-nei-dispositivi-elettronici-min.jpg') center/cover no-repeat;
-  color: #222;
+  background: url('Images/controllo-di-temperatura-nei-dispositivi-elettronici-min.jpg') center/cover no-repeat;
+  z-index: 1;
 }
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3); /* Adjust darkness: 0.3 -> 0.7 */
+  z-index: -1;
+}
+
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 30px;
+  color: white;
+  position: relative;
+  z-index: 2;
 }
+
 
 /* Features */
 .features {
@@ -105,17 +119,18 @@ header nav a {
 
 /* CTA */
 .cta {
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Images\wirless-768x512.webp') center/cover no-repeat;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('Images/wirless-768x512.webp') center/cover no-repeat;
   color: #fff;
+  height: 700px;
   text-align: center;
   padding: 80px 20px;
 }
 .cta button {
-  background: #1b263b;
+  background: none;
   color: #fff;
-  border: none;
+  border: white;
   padding: 15px 30px;
-  border-radius: 5px;
+  border-radius: 30px;
   margin-top: 20px;
   cursor: pointer;
 }
